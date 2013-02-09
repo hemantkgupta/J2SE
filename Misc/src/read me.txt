@@ -1,0 +1,59 @@
+Microsoft Windows XP [Version 5.1.2600]
+(C) Copyright 1985-2001 Microsoft Corp.
+
+C:\Documents and Settings\hgupta>cd\
+
+C:\>cd hgupta
+
+C:\hgupta>cd prog
+
+C:\hgupta\prog>javac Test.java
+
+C:\hgupta\prog>java Test
+Check outh
+
+C:\hgupta\prog>javac -d classes source\Test.java
+
+C:\hgupta\prog>javac -d classes source\com\hgupta\Test.java
+
+C:\hgupta\prog>cd source
+
+C:\hgupta\prog\source>javac -d ..\classes com\hgupta\Test.java
+
+C:\hgupta\prog\source>
+
+/********************************package and classpath *********************************/
+
+
+C:\hgupta\prog\source>javac  Test.java
+
+C:\hgupta\prog\source>java -classpath com\B  Test
+Exception in thread "main" java.lang.NoClassDefFoundError: Test
+
+C:\hgupta\prog\source>java -classpath .;com\B  Test
+Check outh
+7
+
+C:\hgupta\prog\source>
+
+/*****************with jar ****/
+
+
+C:\hgupta\prog\source>cd com\hgupta
+
+C:\hgupta\prog\source\com\hgupta>jar -cf Myjar.jar com
+
+C:\hgupta\prog\source\com\hgupta>cd..
+
+C:\hgupta\prog\source\com>cd..
+
+C:\hgupta\prog\source>java -classpath Myjar.jar Test
+Exception in thread "main" java.lang.NoClassDefFoundError: Test
+
+C:\hgupta\prog\source>java -classpath .;Myjar.jar Test
+Check outh
+7
+
+C:\hgupta\prog\source>
+
+
